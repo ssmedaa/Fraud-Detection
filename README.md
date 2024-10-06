@@ -1,20 +1,42 @@
 # Fraud-Detection
-This is program uses supervised learning, it is a type of machine learning that supplies an algoithm with a set of datasets for training purposes to detect fraudlent transactions. Machine learning are used to recognize patterens that finacial instutuons utilizes with detecting and flagging suspicious activities. 
+## Description 
 
-The dataset used for this was from [Kaggle](https://www.kaggle.com/datasets/ealaxi/paysim1/).
-  - Total number of samples 1,048,575
-    - 1,142 are positive detection of money laundering transaction
-The encoding relevant features: type and isFraud:
-    - Type, refers to the transaction behaviour: cash out, debit, payments, or transfers
-    - isFraud, represents in binary values for not or is fraudulent transactions
+In order to detect fraudulent transactions, this program uses supervised learning; a machine learning technique that is has training on a large datasets. Machine learning provides financial institutions advantages with detecting and flagging any suspicious activities that can potentially be a crime.
 
-Dataset experiment setting splits the data into the following 3 categories: 
-  1. Training set (70%)
-  2. Test set (15%)
-  3. Validating set(15%)
+## Stages ##
+**1. Data Collection**
+- [Kaggle: Bank Payment Dataset](https://www.kaggle.com/datasets/ealaxi/paysim1/)
+- Number of samples: 1,048,575
+
+**2. Data Preparation & Manipulation**
+- The encoding relevant features: type and isFraud:
+    - **Type**, refers to the transaction behaviour: *cash out, debit, payments, or transfers*
+    - **isFraud**, represents binary values for *fraudulent* or *not fradulent* transactions
+      
+**3. Training Model**
+- **Decision trees** utilise features in the dataset to predict the outcome of an event: is fraud or not fraud
+- Dataset Split:
+    - Training: 70%
+    - Validation: 15%
+    - Testing: 15%
+      
+**4. Evaluation**
+
+| | precision | recall | f1-score |
+| --- | --- | --- | --- |
+| 0| 1.00 | 1.00 | 1.00 |
+| 1 | 0.89 | 0.89 | 0.89 |
+| | | | |
+|accuracy| |  |1.00
+
+```
+False Positive Rate (FPR): 0.0001
+
+False Negative Rate (FNR): 0.1100
+```
+```math
+Confusion Matrix:  \begin{bmatrix}1906116&251\\266&2153\\\end{bmatrix}
+```
 
 
-
-Imbalancing of datasets is why financial crime detection or even in general fraud detection
-problems accuracy is not reliable. Thus, in the case of imbalanced dataset precision, recall, f1 score are the metrics that handle these datasets.
 
